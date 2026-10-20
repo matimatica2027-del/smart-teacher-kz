@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5-сынып жұмыс парақтары | SMART TEACHER KZ</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f8faf6;color:#203f34;font-family:Arial,sans-serif}
+header{background:white;border-bottom:1px solid #e2ebe4;padding:22px 6%;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.logo{font-weight:800;color:#205541;text-decoration:none;font-size:17px}
+.back{color:#36785a;text-decoration:none;font-size:13px}
+main{max-width:1050px;margin:auto;padding:30px 5% 65px}
+.hero{background:#e8f3eb;border-radius:25px;overflow:hidden;display:grid;grid-template-columns:1fr 42%;align-items:center;margin-bottom:40px}
+.hero-text{padding:38px}
+.eyebrow{color:#5b8565;font-size:12px;font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.15;margin:17px 0;color:#1b4938}
+.hero p{color:#647c6b;line-height:1.7}
+.hero img{width:100%;height:100%;min-height:270px;object-fit:cover}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.stat{background:white;border-radius:30px;padding:10px 15px;font-size:13px;color:#347458;font-weight:bold}
+h2{font-size:25px;margin:0 0 10px}
+.hint{color:#708478;margin:0 0 24px;font-size:14px}
+.topic{background:white;border:1px solid #dce9df;border-radius:18px;margin:13px 0;overflow:hidden;box-shadow:0 6px 18px #214d3508}
+summary{list-style:none;cursor:pointer;padding:20px;display:flex;align-items:center;gap:15px}
+summary::-webkit-details-marker{display:none}
+.number{background:#e8f4eb;color:#327858;border-radius:12px;padding:13px;font-weight:800}
+.topic-title{flex:1;font-size:16px;font-weight:bold;line-height:1.5}
+.count{font-size:12px;color:#628572;white-space:nowrap}
+.arrow{color:#347858}
+details[open] .arrow{transform:rotate(90deg)}
+.lessons{padding:5px 20px 20px;border-top:1px solid #edf2ed}
+.lesson{padding:13px 0;border-bottom:1px solid #eef2ef;display:flex;gap:12px;align-items:center}
+.lesson:last-child{border:0}
+.lesson-id{color:#438265;font-size:12px;font-weight:bold;min-width:68px}
+.lesson-name{flex:1;font-size:14px;line-height:1.5}
+.tag{background:#edf4ee;color:#56806a;padding:6px 9px;border-radius:9px;font-size:11px;white-space:nowrap}
+.assessment{color:#936e35;background:#fff5e3}
+.note{background:#eff5ef;border-radius:15px;padding:18px;color:#5b7864;font-size:13px;line-height:1.7;margin-top:30px}
+footer{text-align:center;padding:25px;color:#779184;font-size:12px}
+@media(max-width:650px){
+header{padding:18px 5%}
+.logo{font-size:14px}
+.hero{grid-template-columns:1fr}
+.hero-text{padding:27px 22px}
+.hero img{height:200px;min-height:0}
+summary{padding:15px;gap:10px}
+.topic-title{font-size:14px}
+.count{font-size:11px}
+.lessons{padding:5px 15px 15px}
+.lesson{align-items:flex-start}
+.tag{font-size:10px}
+}
+</style>
+</head>
+<body>
+<header>
+<a class="logo" href="index.html">✦ SMART TEACHER KZ</a>
+<a class="back" href="grade5.html">← 5-сынып</a>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-text">
+<div class="eyebrow">5-СЫНЫП • МАТЕМАТИКА</div>
+<h1>II тоқсан<br>Жұмыс парақтары</h1>
+<p>Күнтізбелік-тақырыптық жоспарға сәйкес сабақтар жинағы. Қажетті тақырыпты таңдаңыз.</p>
+<div class="stats">
+<span class="stat">40 сабақ</span>
+<span class="stat">6 тақырыптық топ</span>
+</div>
+</div>
+<img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=85" alt="Оқу үстелі">
+</section>
+
+<section>
+<h2>Тақырыптар бойынша</h2>
+<p class="hint">Тақырыпты басып, сабақтар тізімін ашыңыз.</p>
+<div id="topics"></div>
+</section>
+
+<div class="note">
+Жұмыс парақтары әзірге тізім түрінде көрсетілген.
+Дайын материалдардың файлдарын келесі кезеңде жеке-жеке қосамыз.
+БЖБ және ТЖБ материалдары бағалау бөліміне орналастырылады.
+</div>
+</main>
+
+<footer>© 2026 SMART TEACHER KZ</footer>
+
+<script>
+const groups=[
+{
+title:"Жай бөлшектерді ортақ бөлімге келтіру. Жай бөлшектерді және аралас сандарды салыстыру",
+start:1,count:3,code:"5.1.2.16"
+},
+{
+title:"Жай бөлшектерді қосу және азайту",
+start:4,count:6,code:"5.1.2.17 / 5.1.2.18"
+},
+{
+title:"Аралас сандарды қосу. Аралас сандарды азайту",
+start:10,count:7,code:"5.1.2.19 / 5.1.2.20"
+},
+{
+title:"Жай бөлшектерді және аралас сандарды көбейту",
+start:17,count:7,code:"5.1.2.21"
+},
+{
+title:"Өзара кері сандар",
+start:24,count:2,code:"5.1.1.12 / 5.1.2.22"
+},
+{
+title:"Жай бөлшектерді және аралас сандарды бөлу",
+start:26,count:15,code:"5.1.2.23"
+}
+];
+
+const special={
+16:"БЖБ №4",
+34:"БЖБ №5",
+38:"ТЖБ №2"
+};
+
+const topics=document.getElementById("topics");
+
+groups.forEach((group,index)=>{
+const details=document.createElement("details");
+details.className="topic";
+
+const summary=document.createElement("summary");
+summary.innerHTML=`
+<span class="number">${String(index+1).padStart(2,"0")}</span>
+<span class="topic-title">${group.title}</span>
+<span class="count">${group.count} сабақ</span>
+<span class="arrow">❯</span>`;
+details.appendChild(summary);
+
+const lessons=document.createElement("div");
+lessons.className="lessons";
+
+for(let i=group.start;i<group.start+group.count;i++){
+const row=document.createElement("div");
+row.className="lesson";
+
+const badge=special[i];
+const label=badge||"Кейін қосылады";
+row.innerHTML=`
+<span class="lesson-id">${i}-сабақ</span>
+<span class="lesson-name">${badge?badge:group.title}</span>
+<span class="tag ${badge?"assessment":""}">${label}</span>`;
+lessons.appendChild(row);
+}
+details.appendChild(lessons);
+topics.appendChild(details);
+});
+</script>
+</body>
+</html>
